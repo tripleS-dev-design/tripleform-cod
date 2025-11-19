@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>TripleForm COD – Formulaire COD en 1 clic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="TripleForm COD – Formulaire de commande COD en une étape, connecté à Google Sheets, offres intégrées et protections anti-bot." />
+
+  <!-- Police -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f4f6fb;
+      --card: #ffffff;
+      --text: #07122a;
+      --muted: #5b6477;
+      --accent: #00b6a5;      /* teal bouton/check */
+      --accent-dark: #008c81;
+      --danger: #b0124f;      /* bordeaux logo */
+      --primary: #102b7a;     /* bleu logo */
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --shadow-soft: 0 18px 40px rgba(4, 14, 46, 0.18);
+      --shadow-light: 0 10px 26px rgba(7, 17, 42, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top right, #b0124f 0, transparent 55%),
+                  radial-gradient(circle at 15% 20%, #0f2a8c 0, transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 18px 80px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+    }
+
+    .brand-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .tagline {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .header-cta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 12px 26px rgba(0, 182, 165, 0.45);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 18px 38px rgba(0, 140, 129, 0.55);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.3);
+      color: var(--primary);
+      border: 1px solid rgba(255,255,255,0.7);
+      backdrop-filter: blur(12px);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.9);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(9,16,59,0.18);
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(15,42,140,0.97), rgba(176,18,79,0.96));
+      border-radius: 32px;
+      padding: 30px 26px;
+      box-shadow: var(--shadow-soft);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -80px -120px auto auto;
+      background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.32) 0, transparent 55%);
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 26px;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 0.86rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.9;
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.18;
+      margin-bottom: 10px;
+    }
+
+    .hero-title span {
+      color: #7ef6e9;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      max-width: 420px;
+      opacity: 0.9;
+      margin-bottom: 18px;
+    }
+
+    .hero-list {
+      list-style: none;
+      margin: 0 0 18px;
+      padding: 0;
+      font-size: 0.9rem;
+    }
+
+    .hero-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .hero-check {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: #7ef6e9;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--primary);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .hero-phone {
+      justify-self: center;
+      max-width: 320px;
+      filter: drop-shadow(0 22px 40px rgba(3,10,30,0.72));
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.8rem;
+      opacity: 0.85;
+      margin-top: 4px;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #7ef6e9;
+    }
+
+    /* Sections générales */
+
+    .section {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: var(--radius-lg);
+      padding: 26px 22px;
+      box-shadow: var(--shadow-light);
+    }
+
+    .section + .section {
+      margin-top: 4px;
+    }
+
+    .section-header {
+      margin-bottom: 16px;
+    }
+
+    .section-eyebrow {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .section-title span {
+      color: var(--primary);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
+      gap: 22px;
+      align-items: center;
+    }
+
+    .section-text p {
+      font-size: 0.94rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .section-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .section-list li {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+
+    .section-list .check {
+      margin-top: 2px;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 2px solid var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .section-visual {
+      justify-self: center;
+    }
+
+    .section-visual img {
+      border-radius: 28px;
+    }
+
+    /* Section "pour qui" */
+
+    .audiences {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .audience-card {
+      background: #f7f8ff;
+      border-radius: 18px;
+      padding: 14px 12px;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .audience-label {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .audience-note {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* Contact */
+
+    .contact {
+      text-align: center;
+      padding: 30px 22px 26px;
+    }
+
+    .contact p {
+      font-size: 0.94rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 14px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+
+    .contact-small {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 860px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-phone {
+        max-width: 260px;
+      }
+
+      .section-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-visual img {
+        max-width: 260px;
+      }
+
+      .page {
+        padding: 20px 14px 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <div class="brand">
+        <!-- Remplace src par ton logo -->
+        <img src="assets/logo-tripleform-cod.png" alt="Logo TripleForm COD" class="brand-logo">
+        <div>
+          <div class="brand-title">TripleForm COD</div>
+          <div class="tagline">Formulaire COD • Google Sheets • Offres intégrées</div>
+        </div>
+      </div>
+      <div class="header-cta">
+        <!-- Mets ton vrai lien App Store quand ce sera live -->
+        <a href="#" class="btn btn-primary">Demander une démo</a>
+        <a href="#contact" class="btn btn-ghost">Parler du projet</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <div class="hero-kicker">Formulaire COD en 1 clic</div>
+            <h1 class="hero-title">
+              Remplacez le bouton “Acheter” par un <span>formulaire COD simple & mobile-first</span>
+            </h1>
+            <p class="hero-subtitle">
+              TripleForm COD vous aide à capter des commandes en paiement à la livraison, organiser les leads et suivre vos résultats, sans complexité technique.
+            </p>
+
+            <ul class="hero-list">
+              <li>
+                <span class="hero-check">✓</span>
+                <span>Intégré directement sur vos pages produit & landing pages</span>
+              </li>
+              <li>
+                <span class="hero-check">✓</span>
+                <span>Champs essentiels : nom, téléphone, adresse, variantes, quantité…</span>
+              </li>
+              <li>
+                <span class="hero-check">✓</span>
+                <span>Design moderne aligné à votre thème Shopify</span>
+              </li>
+            </ul>
+
+            <a href="#sections" class="btn btn-primary">Voir les fonctionnalités clés</a>
+
+            <div class="hero-meta">
+              <span><span class="dot"></span> Projet en développement avancé</span>
+              <span><span class="dot"></span> Intégré avec Google Sheets & pixels</span>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <!-- Remplace par ta maquette principale du formulaire -->
+            <img src="assets/screen-formulaire-cod.png" alt="Capture formulaire COD" class="hero-phone">
+          </div>
+        </div>
+      </section>
+
+      <div id="sections"></div>
+
+      <!-- SECTION 1 : FORMULAIRE -->
+      <section class="section">
+        <div class="section-grid">
+          <div class="section-text">
+            <div class="section-header">
+              <div class="section-eyebrow">Formulaire principal</div>
+              <h2 class="section-title">TripleForm COD – <span>Formulaire de commande en une étape</span></h2>
+            </div>
+            <p>
+              Le cœur de l’app : un formulaire COD en une étape, pensé pour la vitesse et la simplicité côté client.
+              Vous remplacez le bouton “Acheter” par une expérience claire, lisible et totalement optimisée pour le mobile.
+            </p>
+            <ul class="section-list">
+              <li>
+                <span class="check">✓</span>
+                <span>Champs essentiels : nom, téléphone, adresse, variante, quantité…</span>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <span>Texte des labels et messages 100% modifiable.</span>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <span>Design propre qui s’intègre à votre thème Shopify.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="section-visual">
+            <!-- Tu peux réutiliser l'image "TripleForm COD – Formulaire de commande en 1 clic" -->
+            <img src="assets/screen-hero-listing.png" alt="Capture TripleForm COD – Formulaire">
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2 : OFFRES COD -->
+      <section class="section">
+        <div class="section-grid">
+          <div class="section-text">
+            <div class="section-header">
+              <div class="section-eyebrow">Offres & upsells</div>
+              <h2 class="section-title"><span>Offres COD puissantes</span> à l’intérieur du formulaire</h2>
+            </div>
+            <p>
+              TripleForm COD permet d’intégrer des offres directement dans le formulaire pour augmenter le panier moyen,
+              sans ajouter de tunnel complexe.
+            </p>
+            <ul class="section-list">
+              <li>
+                <span class="check">✓</span>
+                <span>Offres de quantité (1, 2, 3+ produits) affichées sous le produit.</span>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <span>Badges de remise et compte à rebours pour mettre la pression douce.</span>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <span>Contrôle complet sur les prix, remises et textes des offres.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="section-visual">
+            <!-- Réutilise ton visuel "Offres COD puissantes..." -->
+            <img src="assets/screen-offres-cod.png" alt="Offres COD intégrées au formulaire">
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3 : GOOGLE SHEETS -->
+      <section class="section">
+        <div class="section-grid">
+          <div class="section-text">
+            <div class="section-header">
+              <div class="section-eyebrow">Données & équipe</div>
+              <h2 class="section-title">Importez vos commandes sur <span>Google Sheets</span></h2>
+            </div>
+            <p>
+              Gardez toutes vos commandes COD organisées au même endroit et donnez à votre équipe une vue claire sur les leads à traiter.
+            </p>
+            <ul class="section-list">
+              <li>
+                <span class="check">✓</span>
+                <span>Export automatique des nouvelles commandes vers Google Sheets.</span>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <span>Personnalisation des colonnes envoyées (produit, source, pays, etc.).</span>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <span>Parfait pour la logistique et les équipes de télévente.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="section-visual">
+            <!-- Réutilise ton visuel "Importez vos commandes sur Google Sheets" -->
+            <img src="assets/screen-google-sheets.png" alt="Commandes COD dans Google Sheets">
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4 : ANTI-BOT & TRACKING -->
+      <section class="section">
+        <div class="section-grid">
+          <div class="section-text">
+            <div class="section-header">
+              <div class="section-eyebrow">Qualité des leads</div>
+              <h2 class="section-title">Protections anti-bot & <span>tracking propre</span></h2>
+            </div>
+            <p>
+              L’app est conçue pour limiter le spam et garder des stats fiables pour vos campagnes publicitaires.
+            </p>
+            <ul class="section-list">
+              <li>
+                <span class="check">✓</span>
+                <span>Vérifications sur le numéro de téléphone et certains champs clés.</span>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <span>Blocage d’IP suspectes ou abusives (option à activer).</span>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <span>Compatibilité avec les pixels (Meta / Google…) pour suivre les conversions COD.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="section-visual">
+            <!-- Placeholder, tu peux mettre un screen des settings "Anti-bot" plus tard -->
+            <img src="assets/screen-anti-bot.png" alt="Réglages anti-bot et tracking">
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5 : POUR QUI -->
+      <section class="section">
+        <div class="section-header">
+          <div class="section-eyebrow">Pour qui ?</div>
+          <h2 class="section-title">Pensé pour les <span>vraies boutiques COD</span></h2>
+        </div>
+        <p style="font-size:0.94rem;color:var(--muted);max-width:640px;">
+          TripleForm COD s’adresse aux marchands qui veulent aller au-delà du simple formulaire générique, et construire un vrai
+          process autour du paiement à la livraison.
+        </p>
+
+        <div class="audiences">
+          <div class="audience-card">
+            <div class="audience-label">Boutiques COD & dropshipping</div>
+            <div class="audience-note">Captez plus de commandes avec un formulaire simple et des offres intégrées.</div>
+          </div>
+          <div class="audience-card">
+            <div class="audience-label">Équipes de télévente</div>
+            <div class="audience-note">Retrouvez toutes les commandes dans un Google Sheets clair, prêt pour les relances.</div>
+          </div>
+          <div class="audience-card">
+            <div class="audience-label">Agences & media buyers</div>
+            <div class="audience-note">Tracking propre, événements de conversion, contrôle sur la qualité des leads.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT / PARTENARIAT -->
+      <section class="section contact" id="contact">
+        <div class="section-header" style="margin-bottom:10px;">
+          <div class="section-eyebrow">Projet & partenariat</div>
+          <h2 class="section-title"><span>Discutons</span> de TripleForm COD</h2>
+        </div>
+        <p>
+          Le projet est actuellement en développement avancé (environ 50%). Une première app est déjà live sur l’App Store Shopify,
+          et plusieurs blocs / apps sont en cours pour créer un petit écosystème autour du COD.
+        </p>
+        <p>
+          Si vous souhaitez tester l’app, donner votre avis ou discuter d’un partenariat stratégique,
+          je serai ravi d’échanger 15–20 minutes.
+        </p>
+
+        <div class="contact-links">
+          <a class="btn btn-primary" href="mailto:ktami.sami@icloud.com">Écrire un e-mail</a>
+          <a class="btn btn-ghost" href="https://wa.me/212681570887" target="_blank" rel="noreferrer">
+            Me contacter sur WhatsApp
+          </a>
+        </div>
+        <div class="contact-small">
+          Email : <strong>ktami.sami@icloud.com</strong> • WhatsApp : <strong>+212 6 81 57 08 87</strong>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

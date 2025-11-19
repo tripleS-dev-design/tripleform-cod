@@ -5,6 +5,7 @@
   <title>TripleForm COD – Formulaire COD en 1 clic</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="TripleForm COD – Formulaire de commande COD en une étape, connecté à Google Sheets, offres intégrées et protections anti-bot." />
+  <meta name="keywords" content="TripleForm COD, formulaire COD, Shopify, Google Sheets, anti bot, paiement à la livraison, Cash on Delivery, upsell, offres COD, tracking pixels">
 
   <!-- Police -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -159,7 +160,7 @@
     .hero-inner {
       position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.1fr);
       gap: 26px;
       align-items: center;
     }
@@ -264,8 +265,8 @@
 
     .hero-phone {
       justify-self: center;
-      max-width: 320px;
-      filter: drop-shadow(0 22px 40px rgba(3,10,30,0.72));
+      max-width: 440px; /* plus grand */
+      filter: drop-shadow(0 24px 46px rgba(3,10,30,0.8));
     }
 
     .hero-meta {
@@ -361,13 +362,13 @@
     }
 
     .ai-card {
-      min-width: 260px;
-      max-width: 280px;
+      min-width: 320px;
+      max-width: 360px;
       flex-shrink: 0;
       background: #050b1d;
       border-radius: 20px;
-      padding: 6px;
-      box-shadow: 0 12px 30px rgba(4, 10, 36, 0.6);
+      padding: 8px;
+      box-shadow: 0 16px 36px rgba(4, 10, 36, 0.7);
       position: relative;
       overflow: hidden;
     }
@@ -510,6 +511,8 @@
 
     .section-visual img {
       border-radius: 28px;
+      max-width: 440px;
+      width: 100%;
     }
 
     /* Section "pour qui" */
@@ -566,6 +569,189 @@
       color: var(--muted);
     }
 
+    /* Assistant IA fixe à gauche */
+
+    .ai-assistant {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      pointer-events: none;
+    }
+
+    .ai-assistant-panel {
+      width: 280px;
+      max-height: 360px;
+      background: rgba(8, 14, 40, 0.96);
+      border-radius: 18px;
+      padding: 12px 12px 10px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.7);
+      border: 1px solid rgba(126,246,233,0.45);
+      color: #f5feff;
+      font-size: 0.86rem;
+      backdrop-filter: blur(12px);
+      transform: translateY(12px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+
+    .ai-assistant-panel.open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .ai-assistant-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .ai-assistant-title {
+      font-size: 0.86rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ai-assistant-title span.icon {
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #7ef6e9, #00b6a5);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: #07122a;
+    }
+
+    .ai-assistant-close {
+      border: none;
+      background: transparent;
+      color: #9ea7ff;
+      cursor: pointer;
+      font-size: 0.86rem;
+    }
+
+    .ai-assistant-body {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ai-assistant-intro {
+      font-size: 0.8rem;
+      color: #c3ceff;
+    }
+
+    .ai-assistant-faq {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 2px;
+    }
+
+    .ai-assistant-faq button {
+      border: none;
+      background: rgba(14, 26, 70, 0.9);
+      color: #e9f0ff;
+      font-size: 0.78rem;
+      border-radius: 999px;
+      padding: 4px 9px;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.12s ease;
+    }
+
+    .ai-assistant-faq button:hover {
+      background: rgba(28, 53, 140, 0.95);
+      transform: translateY(-1px);
+    }
+
+    .ai-assistant-answer {
+      margin-top: 6px;
+      font-size: 0.8rem;
+      color: #f4f7ff;
+      max-height: 150px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .ai-assistant-input {
+      display: flex;
+      margin-top: 6px;
+      gap: 4px;
+    }
+
+    .ai-assistant-input input {
+      flex: 1;
+      border-radius: 999px;
+      border: 1px solid rgba(126,246,233,0.45);
+      padding: 5px 9px;
+      font-size: 0.8rem;
+      background: rgba(9, 16, 50, 0.9);
+      color: #f5feff;
+    }
+
+    .ai-assistant-input button {
+      border-radius: 999px;
+      border: none;
+      padding: 5px 9px;
+      font-size: 0.78rem;
+      background: #00b6a5;
+      color: #07122a;
+      cursor: pointer;
+    }
+
+    .ai-assistant-input input::placeholder {
+      color: #7f8acb;
+    }
+
+    .ai-assistant-badge {
+      font-size: 0.72rem;
+      color: #9ea7ff;
+      margin-top: 3px;
+    }
+
+    .ai-assistant-toggle {
+      pointer-events: auto;
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background: radial-gradient(circle at 30% 0, #7ef6e9 0, #00b6a5 40%, #102b7a 80%);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #07122a;
+      position: relative;
+    }
+
+    .ai-assistant-toggle span {
+      font-size: 1.4rem;
+    }
+
+    .ai-assistant-toggle::after {
+      content: "IA";
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.72rem;
+      color: #e6f8ff;
+      text-shadow: 0 0 6px rgba(0,0,0,0.8);
+    }
+
     @media (max-width: 860px) {
       header {
         flex-direction: column;
@@ -594,6 +780,15 @@
 
       .ai-strip-track {
         animation-duration: 32s;
+      }
+
+      .ai-assistant {
+        left: 16px;
+        bottom: 16px;
+      }
+
+      .ai-assistant-panel {
+        width: 260px;
       }
     }
   </style>
@@ -938,8 +1133,44 @@
     </main>
   </div>
 
-  <!-- SCRIPT : effet de texte tapé (IA) -->
+  <!-- ASSISTANT IA FIXE A GAUCHE -->
+  <div class="ai-assistant">
+    <div class="ai-assistant-panel" id="ai-panel">
+      <div class="ai-assistant-header">
+        <div class="ai-assistant-title">
+          <span class="icon">🤖</span>
+          Assistant IA – TripleForm COD
+        </div>
+        <button class="ai-assistant-close" type="button" id="ai-close">Fermer</button>
+      </div>
+      <div class="ai-assistant-body">
+        <div class="ai-assistant-intro">
+          Posez une question rapide ou cliquez sur un exemple ci-dessous.  
+        </div>
+        <div class="ai-assistant-faq" id="ai-faq-buttons">
+          <!-- boutons FAQ ajoutés par JS -->
+        </div>
+        <div class="ai-assistant-answer" id="ai-answer">
+          Bonjour 👋 Je peux vous expliquer comment fonctionne TripleForm COD : formulaire, Google Sheets, anti-bot, offres COD…
+        </div>
+        <div class="ai-assistant-input">
+          <input type="text" id="ai-input" placeholder="Par ex. Google Sheets, anti-bot, upsell…" />
+          <button type="button" id="ai-send">OK</button>
+        </div>
+        <div class="ai-assistant-badge">
+          Démo front-end • Mots-clés : formulaire, Google Sheets, anti-bot, pixels, offres, COD.
+        </div>
+      </div>
+    </div>
+
+    <button class="ai-assistant-toggle" type="button" id="ai-toggle" aria-label="Ouvrir assistant IA">
+      <span>🤖</span>
+    </button>
+  </div>
+
+  <!-- SCRIPT : effet de texte tapé + assistant IA -->
   <script>
+    // ========= Effet de texte tapé (hero) =========
     (function() {
       const el = document.getElementById("ai-typing");
       if (!el) return;
@@ -958,7 +1189,6 @@
       function typeLoop() {
         const current = phrases[phraseIndex];
         if (!deleting) {
-          // écriture
           el.textContent = current.slice(0, charIndex + 1);
           charIndex++;
           if (charIndex === current.length) {
@@ -967,7 +1197,6 @@
             return;
           }
         } else {
-          // suppression
           el.textContent = current.slice(0, charIndex - 1);
           charIndex--;
           if (charIndex === 0) {
@@ -980,6 +1209,114 @@
       }
 
       typeLoop();
+    })();
+
+    // ========= Assistant IA fixe (FAQ simple + recherche par mots-clés) =========
+    (function() {
+      const panel = document.getElementById("ai-panel");
+      const toggle = document.getElementById("ai-toggle");
+      const closeBtn = document.getElementById("ai-close");
+      const answerEl = document.getElementById("ai-answer");
+      const inputEl = document.getElementById("ai-input");
+      const sendBtn = document.getElementById("ai-send");
+      const faqContainer = document.getElementById("ai-faq-buttons");
+
+      if (!panel || !toggle || !closeBtn) return;
+
+      // Petites FAQs + tags (mots pour "moteur de recherche")
+      const faqs = [
+        {
+          label: "Formulaire 1 étape",
+          keywords: ["formulaire", "1 étape", "one step", "champ"],
+          answer: "Le formulaire TripleForm COD remplace le bouton “Acheter” par une seule étape claire : nom, téléphone, adresse, variantes, quantité… Le contenu est 100% modifiable pour coller à votre niche."
+        },
+        {
+          label: "Google Sheets",
+          keywords: ["sheet", "sheets", "google", "tableau", "logistique"],
+          answer: "Chaque nouvelle commande COD peut être envoyée automatiquement vers Google Sheets. Vous choisissez les colonnes (produit, pays, source, statut…) pour faciliter le travail des équipes de télévente et de logistique."
+        },
+        {
+          label: "Offres & upsell",
+          keywords: ["offre", "upsell", "quantité", "bundle", "2 articles", "3 articles"],
+          answer: "Vous pouvez afficher des offres de quantité directement dans le formulaire : 1, 2 ou 3+ articles, avec prix barré, pourcentage de remise et badges “vous économisez”. Idéal pour augmenter le panier moyen sans tunnel compliqué."
+        },
+        {
+          label: "Anti-bot & qualité",
+          keywords: ["anti bot", "bot", "spam", "fausse commande", "sécurité"],
+          answer: "TripleForm COD peut intégrer plusieurs protections : contrôle du format de numéro, vérifications sur certains champs, blocage d'IP suspectes et compatibilité avec reCAPTCHA. L’objectif est de réduire les fausses commandes et garder des données propres."
+        },
+        {
+          label: "Pixels & tracking",
+          keywords: ["pixel", "tracking", "facebook", "meta", "google ads", "conversion"],
+          answer: "Le formulaire est pensé pour se connecter à vos pixels (Meta, Google…). Vous pouvez déclencher des événements de conversion COD afin de suivre vos résultats et optimiser vos campagnes publicitaires."
+        }
+      ];
+
+      // Génère les boutons FAQ
+      faqs.forEach((f) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = f.label;
+        btn.addEventListener("click", () => {
+          answerEl.textContent = f.answer;
+        });
+        faqContainer.appendChild(btn);
+      });
+
+      function openPanel() {
+        panel.classList.add("open");
+      }
+
+      function closePanel() {
+        panel.classList.remove("open");
+      }
+
+      toggle.addEventListener("click", () => {
+        if (panel.classList.contains("open")) {
+          closePanel();
+        } else {
+          openPanel();
+        }
+      });
+
+      closeBtn.addEventListener("click", closePanel);
+
+      // Recherche simple par mots-clés dans les FAQs
+      function handleQuestion() {
+        const value = (inputEl.value || "").toLowerCase().trim();
+        if (!value) return;
+
+        let best = null;
+        let bestScore = 0;
+
+        faqs.forEach((f) => {
+          let score = 0;
+          f.keywords.forEach((k) => {
+            if (value.includes(k.toLowerCase())) {
+              score++;
+            }
+          });
+          if (score > bestScore) {
+            bestScore = score;
+            best = f;
+          }
+        });
+
+        if (best && bestScore > 0) {
+          answerEl.textContent = best.answer;
+        } else {
+          answerEl.textContent =
+            "Je ne trouve pas de réponse exacte à cette question, mais TripleForm COD couvre le formulaire COD, Google Sheets, offres intégrées, anti-bot et tracking. Essayez avec des mots-clés comme “Google Sheets”, “offres”, “anti-bot” ou “pixels”.";
+        }
+        inputEl.value = "";
+      }
+
+      sendBtn.addEventListener("click", handleQuestion);
+      inputEl.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          handleQuestion();
+        }
+      });
     })();
   </script>
 </body>

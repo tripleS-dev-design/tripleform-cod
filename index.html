@@ -16,10 +16,10 @@
       --card: #ffffff;
       --text: #07122a;
       --muted: #5b6477;
-      --accent: #00b6a5;      /* teal bouton/check */
+      --accent: #00b6a5;
       --accent-dark: #008c81;
-      --danger: #b0124f;      /* bordeaux logo */
-      --primary: #102b7a;     /* bleu logo */
+      --danger: #b0124f;
+      --primary: #102b7a;
       --radius-lg: 24px;
       --radius-md: 18px;
       --shadow-soft: 0 18px 40px rgba(4, 14, 46, 0.18);
@@ -160,7 +160,7 @@
     .hero-inner {
       position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.1fr);
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.35fr);
       gap: 26px;
       align-items: center;
     }
@@ -191,7 +191,6 @@
       margin-bottom: 8px;
     }
 
-    /* Typing effect line */
     .hero-typing {
       font-size: 0.9rem;
       color: #e6fdfb;
@@ -265,7 +264,7 @@
 
     .hero-phone {
       justify-self: center;
-      max-width: 440px; /* plus grand */
+      max-width: 520px; /* plus grand */
       filter: drop-shadow(0 24px 46px rgba(3,10,30,0.8));
     }
 
@@ -291,7 +290,7 @@
       background: #7ef6e9;
     }
 
-    /* Bande IA - carrousel infini */
+    /* Bande TripleSsupport - carrousel infini */
 
     .ai-strip {
       margin-top: -16px;
@@ -362,8 +361,8 @@
     }
 
     .ai-card {
-      min-width: 320px;
-      max-width: 360px;
+      min-width: 360px;
+      max-width: 420px;
       flex-shrink: 0;
       background: #050b1d;
       border-radius: 20px;
@@ -465,7 +464,7 @@
 
     .section-grid {
       display: grid;
-      grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
+      grid-template-columns: minmax(0,1.2fr) minmax(0,1.1fr);
       gap: 22px;
       align-items: center;
     }
@@ -511,7 +510,7 @@
 
     .section-visual img {
       border-radius: 28px;
-      max-width: 440px;
+      max-width: 520px;
       width: 100%;
     }
 
@@ -569,7 +568,7 @@
       color: var(--muted);
     }
 
-    /* Assistant IA fixe à gauche */
+    /* TripleSsupport fixe à gauche */
 
     .ai-assistant {
       position: fixed;
@@ -742,13 +741,15 @@
     }
 
     .ai-assistant-toggle::after {
-      content: "IA";
+      content: "TripleSsupport";
       position: absolute;
-      bottom: -16px;
+      bottom: -18px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       color: #e6f8ff;
+      text-align: center;
+      width: 90px;
       text-shadow: 0 0 6px rgba(0,0,0,0.8);
     }
 
@@ -798,7 +799,6 @@
     <!-- HEADER -->
     <header>
       <div class="brand">
-        <!-- Logo (nom EXACT conservé) -->
         <img src="images/tripleform-cod-logo.png" alt="Logo TripleForm COD" class="brand-logo">
         <div>
           <div class="brand-title">TripleForm COD</div>
@@ -806,7 +806,6 @@
         </div>
       </div>
       <div class="header-cta">
-        <!-- Mets ton vrai lien App Store quand ce sera live -->
         <a href="#" class="btn btn-primary">Demander une démo</a>
         <a href="#contact" class="btn btn-ghost">Parler du projet</a>
       </div>
@@ -825,13 +824,11 @@
               TripleForm COD vous aide à capter des commandes en paiement à la livraison, organiser les leads et suivre vos résultats, sans complexité technique.
             </p>
 
-            <!-- IA PILL -->
             <div class="ai-pill">
               <span class="ai-pill-dot"></span>
-              AI autopilot • Anti-bot • Tracking
+              TripleSsupport • Anti-bot • Tracking
             </div>
 
-            <!-- TEXTE TAPÉ (typing effect) -->
             <p class="hero-typing">
               <span id="ai-typing"></span><span class="typing-cursor">▍</span>
             </p>
@@ -860,18 +857,17 @@
           </div>
 
           <div class="hero-visual">
-            <!-- Nom EXACT gardé (même si un peu bizarre) -->
             <img src="images/tripleform-cod-.png" alt="Capture formulaire COD" class="hero-phone">
           </div>
         </div>
       </section>
 
-      <!-- BANDE IA : CARROUSEL INFINI -->
+      <!-- BANDE TripleSsupport : CARROUSEL INFINI -->
       <section class="section ai-strip">
         <div class="ai-strip-inner">
           <div class="ai-strip-header">
             <div class="ai-strip-title">
-              <span class="icon">AI</span>
+              <span class="icon">TS</span>
               Aperçu intelligent des sections COD
             </div>
             <div class="ai-strip-note">
@@ -880,7 +876,6 @@
           </div>
           <div class="ai-strip-viewport">
             <div class="ai-strip-track">
-              <!-- 1ère série de cartes -->
               <div class="ai-card">
                 <div class="ai-card-inner">
                   <img src="images/tripleform-cod-form.png" alt="Formulaire COD – écran">
@@ -908,8 +903,6 @@
                   </div>
                 </div>
               </div>
-
-              <!-- 2ème série (doublon) pour la boucle infinie -->
               <div class="ai-card">
                 <div class="ai-card-inner">
                   <img src="images/tripleform-cod-form.png" alt="Formulaire COD – écran copie">
@@ -972,7 +965,6 @@
             </ul>
           </div>
           <div class="section-visual">
-            <!-- Nom EXACT gardé comme dans ton code -->
             <img src="images/tripleform-cod-offres.png" alt="Capture TripleForm COD – Formulaire">
           </div>
         </div>
@@ -1006,7 +998,6 @@
             </ul>
           </div>
           <div class="section-visual">
-            <!-- Nom EXACT : tripleform-cod-form.png -->
             <img src="images/tripleform-cod-form.png" alt="Offres COD intégrées au formulaire">
           </div>
         </div>
@@ -1039,7 +1030,6 @@
             </ul>
           </div>
           <div class="section-visual">
-            <!-- Nom EXACT : tripleform-cod-google-sheets.png -->
             <img src="images/tripleform-cod-google-sheets.png" alt="Commandes COD dans Google Sheets">
           </div>
         </div>
@@ -1072,7 +1062,6 @@
             </ul>
           </div>
           <div class="section-visual">
-            <!-- Nom EXACT : tripleform-cod-form.png -->
             <img src="images/tripleform-cod-form.png" alt="Réglages anti-bot et tracking">
           </div>
         </div>
@@ -1133,23 +1122,21 @@
     </main>
   </div>
 
-  <!-- ASSISTANT IA FIXE A GAUCHE -->
+  <!-- TripleSsupport fixe -->
   <div class="ai-assistant">
     <div class="ai-assistant-panel" id="ai-panel">
       <div class="ai-assistant-header">
         <div class="ai-assistant-title">
           <span class="icon">🤖</span>
-          Assistant IA – TripleForm COD
+          TripleSsupport – TripleForm COD
         </div>
         <button class="ai-assistant-close" type="button" id="ai-close">Fermer</button>
       </div>
       <div class="ai-assistant-body">
         <div class="ai-assistant-intro">
-          Posez une question rapide ou cliquez sur un exemple ci-dessous.  
+          Posez une question rapide ou cliquez sur un exemple ci-dessous.
         </div>
-        <div class="ai-assistant-faq" id="ai-faq-buttons">
-          <!-- boutons FAQ ajoutés par JS -->
-        </div>
+        <div class="ai-assistant-faq" id="ai-faq-buttons"></div>
         <div class="ai-assistant-answer" id="ai-answer">
           Bonjour 👋 Je peux vous expliquer comment fonctionne TripleForm COD : formulaire, Google Sheets, anti-bot, offres COD…
         </div>
@@ -1158,28 +1145,27 @@
           <button type="button" id="ai-send">OK</button>
         </div>
         <div class="ai-assistant-badge">
-          Démo front-end • Mots-clés : formulaire, Google Sheets, anti-bot, pixels, offres, COD.
+          TripleSsupport démo • Mots-clés : formulaire, Google Sheets, anti-bot, pixels, offres, COD.
         </div>
       </div>
     </div>
 
-    <button class="ai-assistant-toggle" type="button" id="ai-toggle" aria-label="Ouvrir assistant IA">
+    <button class="ai-assistant-toggle" type="button" id="ai-toggle" aria-label="Ouvrir TripleSsupport">
       <span>🤖</span>
     </button>
   </div>
 
-  <!-- SCRIPT : effet de texte tapé + assistant IA -->
+  <!-- SCRIPT : texte tapé + TripleSsupport -->
   <script>
-    // ========= Effet de texte tapé (hero) =========
     (function() {
       const el = document.getElementById("ai-typing");
       if (!el) return;
 
       const phrases = [
-        "Analyse vos commandes COD en temps réel.",
+        "Optimise vos commandes COD sans complexité.",
         "Aide votre équipe à se concentrer sur les bons leads.",
-        "Protège vos formulaires des bots et du spam.",
-        "Optimise vos résultats sans complexité technique."
+        "Réduit les fausses commandes grâce aux protections anti-bot.",
+        "Organise vos données dans Google Sheets pour la télévente."
       ];
 
       let phraseIndex = 0;
@@ -1193,7 +1179,7 @@
           charIndex++;
           if (charIndex === current.length) {
             deleting = true;
-            setTimeout(typeLoop, 1200); // pause en fin de phrase
+            setTimeout(typeLoop, 1200);
             return;
           }
         } else {
@@ -1211,7 +1197,6 @@
       typeLoop();
     })();
 
-    // ========= Assistant IA fixe (FAQ simple + recherche par mots-clés) =========
     (function() {
       const panel = document.getElementById("ai-panel");
       const toggle = document.getElementById("ai-toggle");
@@ -1223,7 +1208,6 @@
 
       if (!panel || !toggle || !closeBtn) return;
 
-      // Petites FAQs + tags (mots pour "moteur de recherche")
       const faqs = [
         {
           label: "Formulaire 1 étape",
@@ -1252,7 +1236,6 @@
         }
       ];
 
-      // Génère les boutons FAQ
       faqs.forEach((f) => {
         const btn = document.createElement("button");
         btn.type = "button";
@@ -1281,7 +1264,6 @@
 
       closeBtn.addEventListener("click", closePanel);
 
-      // Recherche simple par mots-clés dans les FAQs
       function handleQuestion() {
         const value = (inputEl.value || "").toLowerCase().trim();
         if (!value) return;
@@ -1306,7 +1288,7 @@
           answerEl.textContent = best.answer;
         } else {
           answerEl.textContent =
-            "Je ne trouve pas de réponse exacte à cette question, mais TripleForm COD couvre le formulaire COD, Google Sheets, offres intégrées, anti-bot et tracking. Essayez avec des mots-clés comme “Google Sheets”, “offres”, “anti-bot” ou “pixels”.";
+            "TripleSsupport : je ne trouve pas de réponse exacte à cette question, mais TripleForm COD couvre le formulaire COD, Google Sheets, offres intégrées, anti-bot et tracking. Essayez avec des mots-clés comme “Google Sheets”, “offres”, “anti-bot” ou “pixels”.";
         }
         inputEl.value = "";
       }

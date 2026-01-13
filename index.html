@@ -26,11 +26,7 @@
       --shadow-light: 0 10px 26px rgba(7, 17, 42, 0.12);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -40,12 +36,8 @@
       color: var(--text);
       line-height: 1.6;
     }
- 
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    img { max-width: 100%; display: block; }
 
     .page {
       max-width: 1120px;
@@ -61,15 +53,10 @@
       margin-bottom: 32px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+    .brand { display: flex; align-items: center; gap: 12px; }
 
     .brand-logo {
-      width: 40px;
-      height: 40px;
+      width: 40px; height: 40px;
       border-radius: 12px;
       box-shadow: 0 10px 24px rgba(0,0,0,0.18);
     }
@@ -82,16 +69,9 @@
       color: var(--primary);
     }
 
-    .tagline {
-      font-size: 0.86rem;
-      color: var(--muted);
-    }
+    .tagline { font-size: 0.86rem; color: var(--muted); }
 
-    .header-cta {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+    .header-cta { display: flex; gap: 10px; flex-wrap: wrap; }
 
     .btn {
       border-radius: 999px;
@@ -133,11 +113,7 @@
       box-shadow: 0 14px 30px rgba(9,16,59,0.18);
     }
 
-    main {
-      display: flex;
-      flex-direction: column;
-      gap: 48px;
-    }
+    main { display: flex; flex-direction: column; gap: 48px; }
 
     .hero {
       background: linear-gradient(135deg, rgba(15,42,140,0.97), rgba(176,18,79,0.96));
@@ -181,9 +157,7 @@
       margin-bottom: 10px;
     }
 
-    .hero-title span {
-      color: #7ef6e9;
-    }
+    .hero-title span { color: #7ef6e9; }
 
     .hero-subtitle {
       font-size: 0.98rem;
@@ -203,15 +177,9 @@
       opacity: 0.93;
     }
 
-    .typing-cursor {
-      font-size: 1rem;
-      animation: blink 0.9s steps(2, start) infinite;
-    }
+    .typing-cursor { font-size: 1rem; animation: blink 0.9s steps(2, start) infinite; }
 
-    @keyframes blink {
-      0%, 49% { opacity: 1; }
-      50%, 100% { opacity: 0; }
-    }
+    @keyframes blink { 0%,49% {opacity:1;} 50%,100% {opacity:0;} }
 
     .ai-pill {
       display: inline-flex;
@@ -228,30 +196,18 @@
     }
 
     .ai-pill-dot {
-      width: 8px;
-      height: 8px;
+      width: 8px; height: 8px;
       border-radius: 999px;
       background: #7ef6e9;
       box-shadow: 0 0 12px rgba(126, 246, 233, 0.9);
     }
 
-    .hero-list {
-      list-style: none;
-      margin: 0 0 18px;
-      padding: 0;
-      font-size: 0.9rem;
-    }
+    .hero-list { list-style: none; margin: 0 0 18px; padding: 0; font-size: 0.9rem; }
 
-    .hero-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
+    .hero-list li { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 6px; }
 
     .hero-check {
-      width: 18px;
-      height: 18px;
+      width: 18px; height: 18px;
       border-radius: 999px;
       background: #7ef6e9;
       display: inline-flex;
@@ -265,38 +221,16 @@
 
     .hero-phone {
       justify-self: center;
-      max-width: 520px; /* plus grand */
+      max-width: 520px;
       filter: drop-shadow(0 24px 46px rgba(3,10,30,0.8));
     }
 
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 0.8rem;
-      opacity: 0.85;
-      margin-top: 4px;
-    }
-
-    .hero-meta span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #7ef6e9;
-    }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; opacity: 0.85; margin-top: 4px; }
+    .hero-meta span { display: inline-flex; align-items: center; gap: 6px; }
+    .dot { width: 6px; height: 6px; border-radius: 999px; background: #7ef6e9; }
 
     /* Bande TripleSsupport - carrousel infini */
-
-    .ai-strip {
-      margin-top: -16px;
-      padding-top: 0;
-    }
+    .ai-strip { margin-top: -16px; padding-top: 0; }
 
     .ai-strip-inner {
       background: radial-gradient(circle at 10% 0, rgba(15,42,140,0.09) 0, transparent 55%),
@@ -308,13 +242,7 @@
       border: 1px solid rgba(15,42,140,0.06);
     }
 
-    .ai-strip-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-      gap: 10px;
-    }
+    .ai-strip-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; gap: 10px; }
 
     .ai-strip-title {
       font-size: 0.86rem;
@@ -326,8 +254,7 @@
     }
 
     .ai-strip-title span.icon {
-      width: 18px;
-      height: 18px;
+      width: 18px; height: 18px;
       border-radius: 6px;
       background: linear-gradient(135deg, #7ef6e9, #00b6a5);
       display: inline-flex;
@@ -338,17 +265,9 @@
       box-shadow: 0 0 12px rgba(126,246,233,0.7);
     }
 
-    .ai-strip-note {
-      font-size: 0.78rem;
-      color: var(--muted);
-      opacity: 0.9;
-    }
+    .ai-strip-note { font-size: 0.78rem; color: var(--muted); opacity: 0.9; }
 
-    .ai-strip-viewport {
-      position: relative;
-      overflow: hidden;
-      border-radius: 18px;
-    }
+    .ai-strip-viewport { position: relative; overflow: hidden; border-radius: 18px; }
 
     .ai-strip-track {
       display: flex;
@@ -357,9 +276,7 @@
       animation: ai-marquee 26s linear infinite;
     }
 
-    .ai-strip-viewport:hover .ai-strip-track {
-      animation-play-state: paused;
-    }
+    .ai-strip-viewport:hover .ai-strip-track { animation-play-state: paused; }
 
     .ai-card {
       min-width: 360px;
@@ -390,9 +307,7 @@
       background: radial-gradient(circle at top, rgba(255,255,255,0.16) 0, transparent 55%);
     }
 
-    .ai-card img {
-      border-radius: 14px;
-    }
+    .ai-card img { border-radius: 14px; }
 
     .ai-card-label {
       position: absolute;
@@ -411,25 +326,16 @@
     }
 
     .ai-card-label-dot {
-      width: 7px;
-      height: 7px;
+      width: 7px; height: 7px;
       border-radius: 999px;
       background: #7ef6e9;
       box-shadow: 0 0 10px rgba(126,246,233,0.9);
     }
 
-    @keyframes ai-marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    @keyframes ai-glow {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
+    @keyframes ai-marquee { 0% {transform:translateX(0);} 100% {transform:translateX(-50%);} }
+    @keyframes ai-glow { 0% {transform:rotate(0deg);} 100% {transform:rotate(360deg);} }
 
     /* Sections générales */
-
     .section {
       background: rgba(255, 255, 255, 0.96);
       border-radius: var(--radius-lg);
@@ -437,13 +343,9 @@
       box-shadow: var(--shadow-light);
     }
 
-    .section + .section {
-      margin-top: 4px;
-    }
+    .section + .section { margin-top: 4px; }
 
-    .section-header {
-      margin-bottom: 16px;
-    }
+    .section-header { margin-bottom: 16px; }
 
     .section-eyebrow {
       font-size: 0.78rem;
@@ -453,15 +355,8 @@
       margin-bottom: 6px;
     }
 
-    .section-title {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .section-title span {
-      color: var(--primary);
-    }
+    .section-title { font-size: 1.35rem; font-weight: 700; color: var(--text); }
+    .section-title span { color: var(--primary); }
 
     .section-grid {
       display: grid;
@@ -470,31 +365,15 @@
       align-items: center;
     }
 
-    .section-text p {
-      font-size: 0.94rem;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
+    .section-text p { font-size: 0.94rem; color: var(--muted); margin-bottom: 12px; }
 
-    .section-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      font-size: 0.9rem;
-      color: var(--text);
-    }
+    .section-list { list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: var(--text); }
 
-    .section-list li {
-      display: flex;
-      gap: 8px;
-      align-items: flex-start;
-      margin-bottom: 6px;
-    }
+    .section-list li { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px; }
 
     .section-list .check {
       margin-top: 2px;
-      width: 18px;
-      height: 18px;
+      width: 18px; height: 18px;
       border-radius: 999px;
       border: 2px solid var(--accent);
       display: inline-flex;
@@ -505,72 +384,23 @@
       flex-shrink: 0;
     }
 
-    .section-visual {
-      justify-self: center;
-    }
-
-    .section-visual img {
-      border-radius: 28px;
-      max-width: 520px;
-      width: 100%;
-    }
+    .section-visual { justify-self: center; }
+    .section-visual img { border-radius: 28px; max-width: 520px; width: 100%; }
 
     /* Section "pour qui" */
+    .audiences { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 10px; }
 
-    .audiences {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 14px;
-      margin-top: 10px;
-    }
-
-    .audience-card {
-      background: #f7f8ff;
-      border-radius: 18px;
-      padding: 14px 12px;
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-
-    .audience-label {
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-
-    .audience-note {
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
+    .audience-card { background: #f7f8ff; border-radius: 18px; padding: 14px 12px; font-size: 0.9rem; color: var(--text); }
+    .audience-label { font-weight: 600; margin-bottom: 2px; }
+    .audience-note { font-size: 0.82rem; color: var(--muted); }
 
     /* Contact */
-
-    .contact {
-      text-align: center;
-      padding: 30px 22px 26px;
-    }
-
-    .contact p {
-      font-size: 0.94rem;
-      color: var(--muted);
-      max-width: 560px;
-      margin: 0 auto 14px;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 6px;
-    }
-
-    .contact-small {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
+    .contact { text-align: center; padding: 30px 22px 26px; }
+    .contact p { font-size: 0.94rem; color: var(--muted); max-width: 560px; margin: 0 auto 14px; }
+    .contact-links { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+    .contact-small { font-size: 0.8rem; color: var(--muted); }
 
     /* TripleSsupport fixe à gauche */
-
     .ai-assistant {
       position: fixed;
       bottom: 24px;
@@ -600,31 +430,14 @@
       transition: opacity 0.18s ease, transform 0.18s ease;
     }
 
-    .ai-assistant-panel.open {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
+    .ai-assistant-panel.open { opacity: 1; transform: translateY(0); pointer-events: auto; }
 
-    .ai-assistant-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
+    .ai-assistant-header { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 8px; }
 
-    .ai-assistant-title {
-      font-size: 0.86rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
+    .ai-assistant-title { font-size: 0.86rem; font-weight: 600; display: flex; align-items: center; gap: 6px; }
 
     .ai-assistant-title span.icon {
-      width: 16px;
-      height: 16px;
+      width: 16px; height: 16px;
       border-radius: 999px;
       background: linear-gradient(135deg, #7ef6e9, #00b6a5);
       display: inline-flex;
@@ -634,31 +447,12 @@
       color: #07122a;
     }
 
-    .ai-assistant-close {
-      border: none;
-      background: transparent;
-      color: #9ea7ff;
-      cursor: pointer;
-      font-size: 0.86rem;
-    }
+    .ai-assistant-close { border: none; background: transparent; color: #9ea7ff; cursor: pointer; font-size: 0.86rem; }
 
-    .ai-assistant-body {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+    .ai-assistant-body { display: flex; flex-direction: column; gap: 8px; }
+    .ai-assistant-intro { font-size: 0.8rem; color: #c3ceff; }
 
-    .ai-assistant-intro {
-      font-size: 0.8rem;
-      color: #c3ceff;
-    }
-
-    .ai-assistant-faq {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 2px;
-    }
+    .ai-assistant-faq { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
 
     .ai-assistant-faq button {
       border: none;
@@ -671,10 +465,7 @@
       transition: background 0.15s ease, transform 0.12s ease;
     }
 
-    .ai-assistant-faq button:hover {
-      background: rgba(28, 53, 140, 0.95);
-      transform: translateY(-1px);
-    }
+    .ai-assistant-faq button:hover { background: rgba(28, 53, 140, 0.95); transform: translateY(-1px); }
 
     .ai-assistant-answer {
       margin-top: 6px;
@@ -685,11 +476,7 @@
       padding-right: 4px;
     }
 
-    .ai-assistant-input {
-      display: flex;
-      margin-top: 6px;
-      gap: 4px;
-    }
+    .ai-assistant-input { display: flex; margin-top: 6px; gap: 4px; }
 
     .ai-assistant-input input {
       flex: 1;
@@ -711,20 +498,13 @@
       cursor: pointer;
     }
 
-    .ai-assistant-input input::placeholder {
-      color: #7f8acb;
-    }
+    .ai-assistant-input input::placeholder { color: #7f8acb; }
 
-    .ai-assistant-badge {
-      font-size: 0.72rem;
-      color: #9ea7ff;
-      margin-top: 3px;
-    }
+    .ai-assistant-badge { font-size: 0.72rem; color: #9ea7ff; margin-top: 3px; }
 
     .ai-assistant-toggle {
       pointer-events: auto;
-      width: 54px;
-      height: 54px;
+      width: 54px; height: 54px;
       border-radius: 999px;
       border: none;
       cursor: pointer;
@@ -737,9 +517,7 @@
       position: relative;
     }
 
-    .ai-assistant-toggle span {
-      font-size: 1.4rem;
-    }
+    .ai-assistant-toggle span { font-size: 1.4rem; }
 
     .ai-assistant-toggle::after {
       content: "TripleSsupport";
@@ -754,127 +532,105 @@
       text-shadow: 0 0 6px rgba(0,0,0,0.8);
     }
 
+    /* ✅ Responsive (fermé correctement) */
     @media (max-width: 860px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+      header { flex-direction: column; align-items: flex-start; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-phone { max-width: 260px; }
+      .section-grid { grid-template-columns: 1fr; }
+      .section-visual img { max-width: 260px; }
+      .page { padding: 20px 14px 60px; }
+      .ai-strip-track { animation-duration: 32s; }
+      .ai-assistant { left: 16px; bottom: 16px; }
+      .ai-assistant-panel { width: 260px; }
+    }
 
-      .hero-inner {
-        grid-template-columns: 1fr;
-      }
+    /* =========================
+       ✅ MODE MAINTENANCE
+    ========================= */
+    .maintenance-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      padding: 24px;
+      align-items: center;
+      justify-content: center;
 
-      .hero-phone {
-        max-width: 260px;
-      }
+      background: radial-gradient(circle at top right, rgba(176,18,79,0.55) 0, transparent 55%),
+                  radial-gradient(circle at 15% 20%, rgba(15,42,140,0.55) 0, transparent 55%),
+                  rgba(6, 10, 28, 0.85);
+      backdrop-filter: blur(14px);
+    }
 
-      .section-grid {
-        grid-template-columns: 1fr;
-      }
+    .maintenance-card {
+      width: min(620px, 100%);
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(126, 246, 233, 0.25);
+      border-radius: 28px;
+      padding: 22px 18px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+      color: #ffffff;
+    }
 
-      .section-visual img {
-        max-width: 260px;
-      }
+    .maintenance-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(0, 182, 165, 0.18);
+      border: 1px solid rgba(0, 182, 165, 0.35);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
 
-      .page {
-        padding: 20px 14px 60px;
-      }
+    .maintenance-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #7ef6e9;
+      box-shadow: 0 0 14px rgba(126,246,233,0.85);
+    }
 
-      .ai-strip-track {
-        animation-duration: 32s;
-      }
+    .maintenance-title {
+      font-size: clamp(1.45rem, 2.6vw, 2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
 
-      .ai-assistant {
-        left: 16px;
-        bottom: 16px;
-      }
+    .maintenance-text {
+      font-size: 0.95rem;
+      opacity: 0.92;
+      margin-bottom: 16px;
+    }
 
-      .ai-assistant-panel {
-        width: 260px;
-      }
+    .maintenance-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
 
-  .maintenance-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 999999;
-    padding: 24px;
-    align-items: center;
-    justify-content: center;
+    /* ✅ Quand maintenance active, on cache tout le site */
+    body[data-maintenance="1"] .page,
+    body[data-maintenance="1"] .ai-assistant {
+      display: none !important;
+    }
 
-    background: radial-gradient(circle at top right, rgba(176,18,79,0.55) 0, transparent 55%),
-                radial-gradient(circle at 15% 20%, rgba(15,42,140,0.55) 0, transparent 55%),
-                rgba(6, 10, 28, 0.85);
-    backdrop-filter: blur(14px);
-  }
-
-  .maintenance-card {
-    width: min(620px, 100%);
-    background: rgba(255, 255, 255, 0.10);
-    border: 1px solid rgba(126, 246, 233, 0.25);
-    border-radius: 28px;
-    padding: 22px 18px;
-    box-shadow: 0 24px 60px rgba(0,0,0,0.55);
-    color: #ffffff;
-  }
-
-  .maintenance-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 12px;
-    border-radius: 999px;
-    background: rgba(0, 182, 165, 0.18);
-    border: 1px solid rgba(0, 182, 165, 0.35);
-    font-size: 0.82rem;
-    margin-bottom: 10px;
-  }
-
-  .maintenance-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 999px;
-    background: #7ef6e9;
-    box-shadow: 0 0 14px rgba(126,246,233,0.85);
-  }
-
-  .maintenance-title {
-    font-size: clamp(1.45rem, 2.6vw, 2rem);
-    font-weight: 800;
-    line-height: 1.15;
-    margin-bottom: 10px;
-  }
-
-  .maintenance-text {
-    font-size: 0.95rem;
-    opacity: 0.92;
-    margin-bottom: 16px;
-  }
-
-  .maintenance-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  /* ✅ Quand maintenance active, on cache tout le site */
-  body[data-maintenance="1"] .page,
-  body[data-maintenance="1"] .ai-assistant {
-    display: none !important;
-  }
-
-  /* ✅ Et on affiche seulement la fenêtre */
-  body[data-maintenance="1"] .maintenance-overlay {
-    display: flex;
-  }
-
-
+    /* ✅ Et on affiche seulement la fenêtre */
+    body[data-maintenance="1"] .maintenance-overlay {
+      display: flex;
     }
   </style>
 </head>
-  <body data-maintenance="1">
-  <!-- ✅ Fenêtre Maintenance (affichée seule quand data-maintenance="1") -->
+
+<!-- ✅ Active maintenance: data-maintenance="1" -->
+<!-- ✅ Désactive maintenance: data-maintenance="0" -->
+<body data-maintenance="1">
+
+  <!-- ✅ Fenêtre Maintenance -->
   <div class="maintenance-overlay">
     <div class="maintenance-card">
       <div class="maintenance-badge">
@@ -882,9 +638,7 @@
         Site en cours de traitement
       </div>
 
-      <div class="maintenance-title">
-        Nous effectuons une mise à jour 🚧
-      </div>
+      <div class="maintenance-title">Nous effectuons une mise à jour 🚧</div>
 
       <div class="maintenance-text">
         Le site est temporairement indisponible. Nous revenons très bientôt.
@@ -893,14 +647,10 @@
 
       <div class="maintenance-actions">
         <a class="btn btn-primary" href="mailto:ktami.sami@icloud.com">Me contacter par e-mail</a>
-        <a class="btn btn-ghost" href="https://wa.me/212681570887" target="_blank" rel="noreferrer">
-          WhatsApp
-        </a>
+        <a class="btn btn-ghost" href="https://wa.me/212681570887" target="_blank" rel="noreferrer">WhatsApp</a>
       </div>
     </div>
   </div>
-
-  <!-- ... ensuite ton contenu existant (page, scripts, etc.) ... -->
 
   <div class="page">
     <!-- HEADER -->
@@ -941,18 +691,9 @@
             </p>
 
             <ul class="hero-list">
-              <li>
-                <span class="hero-check">✓</span>
-                <span>Intégré directement sur vos pages produit & landing pages</span>
-              </li>
-              <li>
-                <span class="hero-check">✓</span>
-                <span>Champs essentiels : nom, téléphone, adresse, variantes, quantité…</span>
-              </li>
-              <li>
-                <span class="hero-check">✓</span>
-                <span>Design moderne aligné à votre thème Shopify</span>
-              </li>
+              <li><span class="hero-check">✓</span><span>Intégré directement sur vos pages produit & landing pages</span></li>
+              <li><span class="hero-check">✓</span><span>Champs essentiels : nom, téléphone, adresse, variantes, quantité…</span></li>
+              <li><span class="hero-check">✓</span><span>Design moderne aligné à votre thème Shopify</span></li>
             </ul>
 
             <a href="#sections" class="btn btn-primary">Voir les fonctionnalités clés</a>
@@ -986,55 +727,37 @@
               <div class="ai-card">
                 <div class="ai-card-inner">
                   <img src="images/tripleform-cod-form.png" alt="Formulaire COD – écran">
-                  <div class="ai-card-label">
-                    <span class="ai-card-label-dot"></span>
-                    Formulaire COD principal
-                  </div>
+                  <div class="ai-card-label"><span class="ai-card-label-dot"></span>Formulaire COD principal</div>
                 </div>
               </div>
               <div class="ai-card">
                 <div class="ai-card-inner">
                   <img src="images/tripleform-cod-offres.png" alt="Offres COD – écran">
-                  <div class="ai-card-label">
-                    <span class="ai-card-label-dot"></span>
-                    Offres & quantité
-                  </div>
+                  <div class="ai-card-label"><span class="ai-card-label-dot"></span>Offres & quantité</div>
                 </div>
               </div>
               <div class="ai-card">
                 <div class="ai-card-inner">
                   <img src="images/tripleform-cod-google-sheets.png" alt="Google Sheets – écran">
-                  <div class="ai-card-label">
-                    <span class="ai-card-label-dot"></span>
-                    Google Sheets & équipe
-                  </div>
+                  <div class="ai-card-label"><span class="ai-card-label-dot"></span>Google Sheets & équipe</div>
                 </div>
               </div>
               <div class="ai-card">
                 <div class="ai-card-inner">
                   <img src="images/tripleform-cod-form.png" alt="Formulaire COD – écran copie">
-                  <div class="ai-card-label">
-                    <span class="ai-card-label-dot"></span>
-                    Formulaire COD principal
-                  </div>
+                  <div class="ai-card-label"><span class="ai-card-label-dot"></span>Formulaire COD principal</div>
                 </div>
               </div>
               <div class="ai-card">
                 <div class="ai-card-inner">
                   <img src="images/tripleform-cod-offres.png" alt="Offres COD – écran copie">
-                  <div class="ai-card-label">
-                    <span class="ai-card-label-dot"></span>
-                    Offres & upsell
-                  </div>
+                  <div class="ai-card-label"><span class="ai-card-label-dot"></span>Offres & upsell</div>
                 </div>
               </div>
               <div class="ai-card">
                 <div class="ai-card-inner">
                   <img src="images/tripleform-cod-google-sheets.png" alt="Google Sheets – écran copie">
-                  <div class="ai-card-label">
-                    <span class="ai-card-label-dot"></span>
-                    Suivi des commandes
-                  </div>
+                  <div class="ai-card-label"><span class="ai-card-label-dot"></span>Suivi des commandes</div>
                 </div>
               </div>
             </div>
@@ -1057,18 +780,9 @@
               Vous remplacez le bouton “Acheter” par une expérience claire, lisible et totalement optimisée pour le mobile.
             </p>
             <ul class="section-list">
-              <li>
-                <span class="check">✓</span>
-                <span>Champs essentiels : nom, téléphone, adresse, variante, quantité…</span>
-              </li>
-              <li>
-                <span class="check">✓</span>
-                <span>Texte des labels et messages 100% modifiable.</span>
-              </li>
-              <li>
-                <span class="check">✓</span>
-                <span>Design propre qui s’intègre à votre thème Shopify.</span>
-              </li>
+              <li><span class="check">✓</span><span>Champs essentiels : nom, téléphone, adresse, variante, quantité…</span></li>
+              <li><span class="check">✓</span><span>Texte des labels et messages 100% modifiable.</span></li>
+              <li><span class="check">✓</span><span>Design propre qui s’intègre à votre thème Shopify.</span></li>
             </ul>
           </div>
           <div class="section-visual">
@@ -1090,18 +804,9 @@
               sans ajouter de tunnel complexe.
             </p>
             <ul class="section-list">
-              <li>
-                <span class="check">✓</span>
-                <span>Offres de quantité (1, 2, 3+ produits) affichées sous le produit.</span>
-              </li>
-              <li>
-                <span class="check">✓</span>
-                <span>Badges de remise et compte à rebours pour mettre la pression douce.</span>
-              </li>
-              <li>
-                <span class="check">✓</span>
-                <span>Contrôle complet sur les prix, remises et textes des offres.</span>
-              </li>
+              <li><span class="check">✓</span><span>Offres de quantité (1, 2, 3+ produits) affichées sous le produit.</span></li>
+              <li><span class="check">✓</span><span>Badges de remise et compte à rebours pour mettre la pression douce.</span></li>
+              <li><span class="check">✓</span><span>Contrôle complet sur les prix, remises et textes des offres.</span></li>
             </ul>
           </div>
           <div class="section-visual">
@@ -1122,18 +827,9 @@
               Gardez toutes vos commandes COD organisées au même endroit et donnez à votre équipe une vue claire sur les leads à traiter.
             </p>
             <ul class="section-list">
-              <li>
-                <span class="check">✓</span>
-                <span>Export automatique des nouvelles commandes vers Google Sheets.</span>
-              </li>
-              <li>
-                <span class="check">✓</span>
-                <span>Personnalisation des colonnes envoyées (produit, source, pays, etc.).</span>
-              </li>
-              <li>
-                <span class="check">✓</span>
-                <span>Parfait pour la logistique et les équipes de télévente.</span>
-              </li>
+              <li><span class="check">✓</span><span>Export automatique des nouvelles commandes vers Google Sheets.</span></li>
+              <li><span class="check">✓</span><span>Personnalisation des colonnes envoyées (produit, source, pays, etc.).</span></li>
+              <li><span class="check">✓</span><span>Parfait pour la logistique et les équipes de télévente.</span></li>
             </ul>
           </div>
           <div class="section-visual">
@@ -1150,22 +846,11 @@
               <div class="section-eyebrow">Qualité des leads</div>
               <h2 class="section-title">Protections anti-bot & <span>tracking propre</span></h2>
             </div>
-            <p>
-              L’app est conçue pour limiter le spam et garder des stats fiables pour vos campagnes publicitaires.
-            </p>
+            <p>L’app est conçue pour limiter le spam et garder des stats fiables pour vos campagnes publicitaires.</p>
             <ul class="section-list">
-              <li>
-                <span class="check">✓</span>
-                <span>Vérifications sur le numéro de téléphone et certains champs clés.</span>
-              </li>
-              <li>
-                <span class="check">✓</span>
-                <span>Blocage d’IP suspectes ou abusives (option à activer).</span>
-              </li>
-              <li>
-                <span class="check">✓</span>
-                <span>Compatibilité avec les pixels (Meta / Google…) pour suivre les conversions COD.</span>
-              </li>
+              <li><span class="check">✓</span><span>Vérifications sur le numéro de téléphone et certains champs clés.</span></li>
+              <li><span class="check">✓</span><span>Blocage d’IP suspectes ou abusives (option à activer).</span></li>
+              <li><span class="check">✓</span><span>Compatibilité avec les pixels (Meta / Google…) pour suivre les conversions COD.</span></li>
             </ul>
           </div>
           <div class="section-visual">
@@ -1201,7 +886,7 @@
         </div>
       </section>
 
-      <!-- CONTACT / PARTENARIAT -->
+      <!-- CONTACT -->
       <section class="section contact" id="contact">
         <div class="section-header" style="margin-bottom:10px;">
           <div class="section-eyebrow">Projet & partenariat</div>
@@ -1218,9 +903,7 @@
 
         <div class="contact-links">
           <a class="btn btn-primary" href="mailto:ktami.sami@icloud.com">Écrire un e-mail</a>
-          <a class="btn btn-ghost" href="https://wa.me/212681570887" target="_blank" rel="noreferrer">
-            Me contacter sur WhatsApp
-          </a>
+          <a class="btn btn-ghost" href="https://wa.me/212681570887" target="_blank" rel="noreferrer">Me contacter sur WhatsApp</a>
         </div>
         <div class="contact-small">
           Email : <strong>ktami.sami@icloud.com</strong> • WhatsApp : <strong>+212 6 81 57 08 87</strong>
@@ -1240,9 +923,7 @@
         <button class="ai-assistant-close" type="button" id="ai-close">Fermer</button>
       </div>
       <div class="ai-assistant-body">
-        <div class="ai-assistant-intro">
-          Posez une question rapide ou cliquez sur un exemple ci-dessous.
-        </div>
+        <div class="ai-assistant-intro">Posez une question rapide ou cliquez sur un exemple ci-dessous.</div>
         <div class="ai-assistant-faq" id="ai-faq-buttons"></div>
         <div class="ai-assistant-answer" id="ai-answer">
           Bonjour 👋 Je peux vous expliquer comment fonctionne TripleForm COD : formulaire, Google Sheets, anti-bot, offres COD…
@@ -1353,20 +1034,12 @@
         faqContainer.appendChild(btn);
       });
 
-      function openPanel() {
-        panel.classList.add("open");
-      }
-
-      function closePanel() {
-        panel.classList.remove("open");
-      }
+      function openPanel() { panel.classList.add("open"); }
+      function closePanel() { panel.classList.remove("open"); }
 
       toggle.addEventListener("click", () => {
-        if (panel.classList.contains("open")) {
-          closePanel();
-        } else {
-          openPanel();
-        }
+        if (panel.classList.contains("open")) closePanel();
+        else openPanel();
       });
 
       closeBtn.addEventListener("click", closePanel);
@@ -1381,14 +1054,9 @@
         faqs.forEach((f) => {
           let score = 0;
           f.keywords.forEach((k) => {
-            if (value.includes(k.toLowerCase())) {
-              score++;
-            }
+            if (value.includes(k.toLowerCase())) score++;
           });
-          if (score > bestScore) {
-            bestScore = score;
-            best = f;
-          }
+          if (score > bestScore) { bestScore = score; best = f; }
         });
 
         if (best && bestScore > 0) {
@@ -1402,9 +1070,7 @@
 
       sendBtn.addEventListener("click", handleQuestion);
       inputEl.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-          handleQuestion();
-        }
+        if (e.key === "Enter") handleQuestion();
       });
     })();
   </script>

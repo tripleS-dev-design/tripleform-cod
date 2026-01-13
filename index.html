@@ -40,6 +40,35 @@
       color: var(--text);
       line-height: 1.6;
     }
+    <body data-maintenance="1">
+  <!-- ✅ Fenêtre Maintenance (affichée seule quand data-maintenance="1") -->
+  <div class="maintenance-overlay">
+    <div class="maintenance-card">
+      <div class="maintenance-badge">
+        <span class="maintenance-dot"></span>
+        Site en cours de traitement
+      </div>
+
+      <div class="maintenance-title">
+        Nous effectuons une mise à jour 🚧
+      </div>
+
+      <div class="maintenance-text">
+        Le site est temporairement indisponible. Nous revenons très bientôt.
+        Merci pour votre patience.
+      </div>
+
+      <div class="maintenance-actions">
+        <a class="btn btn-primary" href="mailto:ktami.sami@icloud.com">Me contacter par e-mail</a>
+        <a class="btn btn-ghost" href="https://wa.me/212681570887" target="_blank" rel="noreferrer">
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ... ensuite ton contenu existant (page, scripts, etc.) ... -->
+
 
     img {
       max-width: 100%;
@@ -791,6 +820,84 @@
       .ai-assistant-panel {
         width: 260px;
       }
+
+  .maintenance-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    padding: 24px;
+    align-items: center;
+    justify-content: center;
+
+    background: radial-gradient(circle at top right, rgba(176,18,79,0.55) 0, transparent 55%),
+                radial-gradient(circle at 15% 20%, rgba(15,42,140,0.55) 0, transparent 55%),
+                rgba(6, 10, 28, 0.85);
+    backdrop-filter: blur(14px);
+  }
+
+  .maintenance-card {
+    width: min(620px, 100%);
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(126, 246, 233, 0.25);
+    border-radius: 28px;
+    padding: 22px 18px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+    color: #ffffff;
+  }
+
+  .maintenance-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(0, 182, 165, 0.18);
+    border: 1px solid rgba(0, 182, 165, 0.35);
+    font-size: 0.82rem;
+    margin-bottom: 10px;
+  }
+
+  .maintenance-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #7ef6e9;
+    box-shadow: 0 0 14px rgba(126,246,233,0.85);
+  }
+
+  .maintenance-title {
+    font-size: clamp(1.45rem, 2.6vw, 2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+
+  .maintenance-text {
+    font-size: 0.95rem;
+    opacity: 0.92;
+    margin-bottom: 16px;
+  }
+
+  .maintenance-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  /* ✅ Quand maintenance active, on cache tout le site */
+  body[data-maintenance="1"] .page,
+  body[data-maintenance="1"] .ai-assistant {
+    display: none !important;
+  }
+
+  /* ✅ Et on affiche seulement la fenêtre */
+  body[data-maintenance="1"] .maintenance-overlay {
+    display: flex;
+  }
+
+
     }
   </style>
 </head>
